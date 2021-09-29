@@ -1,6 +1,6 @@
 {
   "short_name": "Walky",
-  "start_url": "/index.html",
+  "start_url": "/",
   "background_color": "#fff",
   "display": "fullscreen",
   "scope": "/"
