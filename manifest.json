@@ -2,6 +2,5 @@
   "short_name": "Walky",
   "start_url": "/",
   "background_color": "#fff",
-  "display": "fullscreen",
-  "scope": "/"
+  "display": "browser"
 }
