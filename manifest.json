@@ -1,0 +1,7 @@
+{
+  "short_name": "Walky",
+  "start_url": "/index.html",
+  "background_color": "#fff",
+  "display": "fullscreen",
+  "scope": "/"
+}

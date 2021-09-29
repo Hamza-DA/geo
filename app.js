@@ -26,42 +26,25 @@
 // //   document.querySelector('body').innerHTML +=
 // //     geolocationCoordinatesInstance.speed;
 // // }, 1000);
-const x = document.querySelector('body');
-// setInterval(() => {
+// const x = document.querySelector('body');
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    navigator.geolocation.watchPosition(showPosition);
   } else {
     x.innerHTML = 'Geolocation is not supported by this browser.';
   }
 }
 
 function showPosition(position) {
-  setInterval(() => {
-    x.innerHTML = 'Speed: ' + position.coords.speed + '<br>';
-  }, 500);
+  document.querySelector('.speed').innerHTML = position.coords.speed;
+  document.querySelector('.longitude').innerHTML = position.coords.longitude;
+  document.querySelector('.latitude').innerHTML = position.coords.latitude;
 }
-window.addEventListener('load', () => getLocation());
+getLocation();
+
+// const minutes = document.querySelector('.timer-minutes');
+// const seconds = document.querySelector('.timer-seconds');
+// secs = 1;
+// setInterval(() => {
+//   seconds.innerHTML = secs++;
 // }, 500);
-
-////////////////////
-
-// if (navigator.geolocation) {
-//   navigator.geolocation.getCurrentPosition(success, fail);
-// } else {
-//   alert('Sorry, your browser does not support geolocation services.');
-// }
-
-// function success(position) {
-//   x.innerHTML =
-//     position.coords.latitude +
-//     'lon=' +
-//     position.coords.longitude +
-//     'accuracy' +
-//     position.coords.accuracy;
-// }
-
-// function fail() {
-//   //
-//   x.innerHTML = 'Could not obtain location';
-// }
