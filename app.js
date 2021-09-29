@@ -27,22 +27,22 @@
 // //     geolocationCoordinatesInstance.speed;
 // // }, 1000);
 const x = document.querySelector('body');
-setInterval(() => {
-  function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-      x.innerHTML = 'Geolocation is not supported by this browser.';
-    }
+// setInterval(() => {
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = 'Geolocation is not supported by this browser.';
   }
+}
 
-  function showPosition(position) {
-    setInterval(() => {
-      x.innerHTML += 'Speed: ' + position.coords.speed + '<br>';
-    }, 500);
-  }
-  window.addEventListener('load', () => getLocation());
-}, 500);
+function showPosition(position) {
+  setInterval(() => {
+    x.innerHTML = 'Speed: ' + position.coords.speed + '<br>';
+  }, 500);
+}
+window.addEventListener('load', () => getLocation());
+// }, 500);
 
 ////////////////////
 
